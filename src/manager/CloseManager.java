@@ -44,7 +44,6 @@ public class CloseManager extends HttpServlet{
 			pstmt  = conn.prepareStatement(sql);
 			pstmt.executeUpdate(sql);
 			
-<<<<<<< HEAD
 			sql = "INSERT INTO Travel (id, dateCount) VALUE ('1' , '1')";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.executeUpdate();		
@@ -101,60 +100,6 @@ public class CloseManager extends HttpServlet{
 				 java.sql.Date e = new java.sql.Date(endCal.getTimeInMillis());
 				 
 				if(t.updateDate(s, e)) {
-=======
-			sql = "INSERT INTO Travel (id) VALUE ('1')";
-			pstmt=conn.prepareStatement(sql);
-			pstmt.executeUpdate();		
-	
-			con.closeDB(conn, pstmt);
-				
-			
-		}catch(Exception e){
-			e.printStackTrace(); 
-		}finally{
-			
-			ServletContext context = request.getSession().getServletContext();
-			RequestDispatcher rd  = context.getRequestDispatcher("/SelectToDoView.jsp");
-			
-			rd.forward(request, response);
-		
-		}
-	}
-	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		
-		try{
-			TravelInfo t = new TravelInfo();
-			
-			Date startDate = null;
-			Date endDate = null;
-			
-			conn = con.setDB(conn);
-			
-			String sql = "SELECT startDate, endDate FROM Travel WHERE id = 1";
-			pstmt  = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery(sql);
-			
-			while(rs.next()){
-				startDate = rs.getDate("startDate");
-				endDate = rs.getDate("endDate");
-			}
-			
-			if(startDate == endDate){
-				//끝
-			}
-			else{
-				Calendar cal = Calendar.getInstance();
-				 cal.setTime(startDate);
-				 cal.add(Calendar.DAY_OF_MONTH, 1);
-				 System.out.println(Calendar.DAY_OF_MONTH);
-				 
-				 
-				 java.sql.Date s = new java.sql.Date(cal.getTimeInMillis());
-				 
-				if(t.saveDate(s)) {
->>>>>>> refs/remotes/choose_remote_name/master
 					response.setCharacterEncoding("utf-8");
 				    System.out.println("갱신하였습니다.");
 				}

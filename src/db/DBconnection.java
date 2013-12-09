@@ -23,9 +23,7 @@ public class DBconnection {
 		conn.close();
 		pstmt.close();
 	}
-<<<<<<< HEAD
-	
-=======
+
 	 public static Connection getConnection() throws SQLException{
 		  Connection conn;
 		  String url = "jdbc:mysql://ecdysis.krois.se:43306/kkwak?useUnicode=true&characterEncoding=UTF-8";
@@ -43,5 +41,5 @@ public class DBconnection {
 		  if(rs != null){try{rs.close();}catch(SQLException e){e.printStackTrace();}}
 		  close(ps, conn);
 		 }
->>>>>>> refs/remotes/choose_remote_name/master
+
 }
