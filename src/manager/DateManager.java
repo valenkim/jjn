@@ -43,7 +43,10 @@ public class DateManager extends HttpServlet {
 		TravelInfo travel = new TravelInfo();
 		java.sql.Date s = new java.sql.Date(startCal.getTimeInMillis());
 		java.sql.Date e = new java.sql.Date(endCal.getTimeInMillis());
+<<<<<<< HEAD
 		
+=======
+>>>>>>> refs/remotes/choose_remote_name/master
 		if(travel.saveDate(s, e)) {
 			response.setCharacterEncoding("utf-8");
 		    System.out.println("날짜를 선택하였습니다.");

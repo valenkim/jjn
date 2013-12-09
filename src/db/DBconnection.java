@@ -23,5 +23,25 @@ public class DBconnection {
 		conn.close();
 		pstmt.close();
 	}
+<<<<<<< HEAD
 	
+=======
+	 public static Connection getConnection() throws SQLException{
+		  Connection conn;
+		  String url = "jdbc:mysql://ecdysis.krois.se:43306/kkwak?useUnicode=true&characterEncoding=UTF-8";
+		  String id = "kkwak";
+		  String password = "software";
+		  conn = DriverManager.getConnection(url, id, password);
+
+		  return conn;
+		 }
+		 public static void close(PreparedStatement ps, Connection conn){
+		  if(ps != null){try{ps.close();}catch(SQLException e){e.printStackTrace();}}
+		  if(conn != null){try{conn.close();}catch(SQLException e){e.printStackTrace();}}
+		 }
+		 public static void close(ResultSet rs, PreparedStatement ps, Connection conn){
+		  if(rs != null){try{rs.close();}catch(SQLException e){e.printStackTrace();}}
+		  close(ps, conn);
+		 }
+>>>>>>> refs/remotes/choose_remote_name/master
 }
