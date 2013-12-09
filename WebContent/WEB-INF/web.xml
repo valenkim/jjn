@@ -65,4 +65,30 @@
     <servlet-name>DateManager</servlet-name>
     <url-pattern>/DateManager</url-pattern>
   </servlet-mapping>
+  
+     <servlet>
+     <servlet-name>ScoreManager</servlet-name>
+     <servlet-class>manager.ScoreManager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>ScoreManager</servlet-name>
+     <url-pattern>/ScoreManager</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>MaintainRoutemanager</servlet-name>
+     <servlet-class>manager.MaintainRoutemanager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>MaintainRoutemanager</servlet-name>
+     <url-pattern>/MaintainRoutemanager</url-pattern>
+   </servlet-mapping>
+   <servlet>
+     <servlet-name>ViewOtherTableManager</servlet-name>
+     <servlet-class>manager.ViewOtherTableManager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>ViewOtherTableManager</servlet-name>
+     <url-pattern>/ViewOtherTableManager</url-pattern>
+   </servlet-mapping>
+ 
 </web-app>
