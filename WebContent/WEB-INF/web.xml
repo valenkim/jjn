@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>startjjn</display-name>
+  <display-name>jjnProject</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -9,4 +9,86 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>TimeManager</servlet-name>
+    <servlet-class>manager.TimeManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TimeManager</servlet-name>
+    <url-pattern>/TimeManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TimeTableManager</servlet-name>
+    <servlet-class>manager.TimeTableManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TimeTableManager</servlet-name>
+    <url-pattern>/TimeTableManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TrainManager</servlet-name>
+    <servlet-class>manager.TrainManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TrainManager</servlet-name>
+    <url-pattern>/TrainManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StatCityManager</servlet-name>
+    <servlet-class>manager.StatCityManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatCityManager</servlet-name>
+    <url-pattern>/StatCityManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DestCityManager</servlet-name>
+    <servlet-class>manager.DestCityManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DestCityManager</servlet-name>
+    <url-pattern>/DestCityManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CloseManager</servlet-name>
+    <servlet-class>manager.CloseManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CloseManager</servlet-name>
+    <url-pattern>/CloseManager</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>DateManager</servlet-name>
+    <servlet-class>manager.DateManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DateManager</servlet-name>
+    <url-pattern>/DateManager</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+		<servlet-name>ScoreManager</servlet-name>
+		<servlet-class>manager.ScoreManager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ScoreManager</servlet-name>
+		<url-pattern>/ScoreManager</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>MaintainRoutemanager</servlet-name>
+		<servlet-class>manager.MaintainRoutemanager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MaintainRoutemanager</servlet-name>
+		<url-pattern>/MaintainRoutemanager</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewOtherTableManager</servlet-name>
+		<servlet-class>manager.ViewOtherTableManager</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewOtherTableManager</servlet-name>
+		<url-pattern>/ViewOtherTableManager</url-pattern>
+	</servlet-mapping>
+
 </web-app>
