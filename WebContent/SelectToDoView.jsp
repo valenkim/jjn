@@ -22,8 +22,10 @@
 </form>
 ----------------------------------------------------------<p>
 
-
+<form method="post" action="FreeManager">
 	<input type="submit" value="자유 여행하기"><p>
+</form>
+
 
 
 <form method="get" action="CloseManager">

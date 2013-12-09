@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,13 +20,29 @@ public class FreeManager extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ti.saveFreeTravel();
+		
 			
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		try{
+			if(ti.saveFreeTravel()){
+				System.out.println("자유여행 성공");
+			}
+		}catch(Exception e){
+			e.printStackTrace(); 
+		}finally{
+			
+			ServletContext context = request.getSession().getServletContext();
+			RequestDispatcher rd  = context.getRequestDispatcher("/CloseManager");
+			rd.forward(request, response);		
+		}
+		
+		
+		
+		
 	}
 
 }

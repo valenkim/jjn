@@ -74,6 +74,15 @@
      <servlet-name>ScoreManager</servlet-name>
      <url-pattern>/ScoreManager</url-pattern>
    </servlet-mapping>
+      <servlet>
+     <servlet-name>FreeManager</servlet-name>
+     <servlet-class>manager.FreeManager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>FreeManager</servlet-name>
+     <url-pattern>/FreeManager</url-pattern>
+   </servlet-mapping>
+   
    <servlet>
      <servlet-name>MaintainRoutemanager</servlet-name>
      <servlet-class>manager.MaintainRoutemanager</servlet-class>

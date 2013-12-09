@@ -45,9 +45,9 @@ public class givetravelListServlet extends HttpServlet{
 
 		pw.println("<tr>");
 
-		pw.println("<th>아이디</th><th>별점</th>");
+		pw.println("<th>�꾩씠��/th><th>蹂꾩젏</th>");
 
-		////////////////// DB에서 전체 정보 얻어와 테이블로 출력하기 ///////////////
+		////////////////// DB�먯꽌 �꾩껜 �뺣낫 �살뼱���뚯씠釉붾줈 異쒕젰�섍린 ///////////////
 
 		
 
@@ -71,14 +71,14 @@ public class givetravelListServlet extends HttpServlet{
 
 			while(rs.next()){
 
-				//현재행의 각각의 컬럼값들 얻어오기
+				//�꾩옱�됱쓽 媛곴컖��而щ읆媛믩뱾 �살뼱�ㅺ린
 
 				String userid=rs.getString("userid");
 
 				String starscore=rs.getString("starscore");
 
 
-				//보여줄 테이블에 행(tr) 추가하고 컬럼값들을 td에보이기
+				//蹂댁뿬以��뚯씠釉붿뿉 ��tr) 異붽��섍퀬 而щ읆媛믩뱾��td�먮낫�닿린
 
 				pw.println("<tr>");
 
@@ -119,7 +119,7 @@ public class givetravelListServlet extends HttpServlet{
 		
 
 		//////////////////////////////////////////////////////////////////////		
-		pw.println("<a href='UserUI.jsp'>돌아가기</a>");
+		pw.println("<a href='UserUI.jsp'>�뚯븘媛�린</a>");
 		pw.println("<br>");
 		
 		pw.println("</tr>");		

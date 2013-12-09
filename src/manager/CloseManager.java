@@ -85,7 +85,7 @@ public class CloseManager extends HttpServlet{
 			}
 			
 			if(startDate == endDate){
-				//场
+				System.out.println("咯青 风飘 肯己!!");
 			}
 			else{
 				Calendar startCal = Calendar.getInstance();

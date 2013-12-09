@@ -206,9 +206,35 @@ public class TravelInfo {
 		
 		
 	}
-	public void saveFreeTravel(){
+	public boolean saveFreeTravel(){
 		
-		
-	}
+		try{
+			
+			conn = con.setDB(conn);
+			
+			String upsql = "SELECT id FROM Travel ORDER BY  id DESC LIMIT 1";
+			
+			pstmt  = conn.prepareStatement(upsql);
+			rs = pstmt.executeQuery(upsql);
 
+			int id = 0; 
+			while(rs.next()){
+			   id = rs.getInt("id");
+		   }
+		   
+			rs.close();
+			
+			String sql = "UPDATE Travel SET freeCount = 1 WHERE id = "+id;
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.executeUpdate();
+			
+			con.closeDB(conn, pstmt);
+			return true;
+			
+		}catch(Exception e){
+			  e.printStackTrace();
+		}
+		return false;		
+	}
 }
