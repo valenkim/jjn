@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Project</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  <servlet-name>loginServlet</servlet-name>
+  <servlet-class>servlet.form.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>loginServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>pro</servlet-name>
+  <servlet-class>test.pro</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>pro</servlet-name>
+  <url-pattern>/pro</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>registerServlet</servlet-name>
+  <servlet-class>servlet.form.RegisterServlet</servlet-class>
+ </servlet>
+ 
+ <servlet-mapping>
+  <servlet-name>registerServlet</servlet-name>
+  <url-pattern>/register</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+  <servlet-name>companyRegister</servlet-name>
+  <servlet-class>servlet.form.CompanyRegister</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>companyRegister</servlet-name>
+  <url-pattern>/company</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>TimeManager</servlet-name>
+  <servlet-class>manager.TimeManager</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>TimeManager</servlet-name>
+  <url-pattern>/TimeManager</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>TimeTableManager</servlet-name>
+  <servlet-class>manager.TimeTableManager</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>TimeTableManager</servlet-name>
+  <url-pattern>/TimeTableManager</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>TrainManager</servlet-name>
+  <servlet-class>manager.TrainManager</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>TrainManager</servlet-name>
+  <url-pattern>/TrainManager</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>StatCityManager</servlet-name>
+  <servlet-class>manager.StatCityManager</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  <servlet-name>StatCityManager</servlet-name>
+  <url-pattern>/StatCityManager</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>DestCityManager</servlet-name>
+  <servlet-class>manager.DestCityManager</servlet-class>
+  </servlet>
+
+   <servlet-mapping>
+   <servlet-name>DestCityManager</servlet-name>
+   <url-pattern>/DestCityManager</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+   <servlet-name>CloseManager</servlet-name>
+   <servlet-class>manager.CloseManager</servlet-class>  
+   </servlet>
+
+   <servlet-mapping>
+   <servlet-name>CloseManager</servlet-name>
+   <url-pattern>/CloseManager</url-pattern>
+   </servlet-mapping>
+
+   <servlet>
+   <servlet-name>DateManager</servlet-name>
+   <servlet-class>manager.DateManager</servlet-class>
+   </servlet>
+
+    <servlet-mapping>
+    <servlet-name>DateManager</servlet-name>
+    <url-pattern>/DateManager</url-pattern>
+    </servlet-mapping>
+
+</web-app>
