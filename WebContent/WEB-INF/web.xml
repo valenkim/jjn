@@ -82,6 +82,15 @@
      <servlet-name>FreeManager</servlet-name>
      <url-pattern>/FreeManager</url-pattern>
    </servlet-mapping>
+
+  <servlet>
+     <servlet-name>MealManager</servlet-name>
+     <servlet-class>manager.MealManager</servlet-class>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>MealManager</servlet-name>
+     <url-pattern>/MealManager</url-pattern>
+   </servlet-mapping>
    
    <servlet>
      <servlet-name>MaintainRoutemanager</servlet-name>
