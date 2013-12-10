@@ -29,7 +29,7 @@ public class MaintainRoutemanager extends HttpServlet {
 		
 		t = newroute.selectallid();
 	    s = newroute.selectallstarscore();
-	   request.setAttribute("userid", t);
+	   request.setAttribute("userid", t.userid);
 	   request.setAttribute("starscore", s);
 
 	   ServletContext context = request.getSession().getServletContext();
