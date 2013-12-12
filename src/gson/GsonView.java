@@ -2,6 +2,7 @@ package gson;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,8 +13,11 @@ import com.google.gson.Gson;
 
 import Info.*;
 import gson.GsonUtil;
+import entity.CompanyInfo;
 
 public class GsonView {
+	
+
 	
 	public Item changeAddress(String add){
 		try{
@@ -45,7 +49,9 @@ public class GsonView {
 		return null;
 	}
 
-	public void distance(double lat1, double 	lng1,  double lat2, double  lng2){
+	public CompanyInfo distance(int id, String address, String title, double lat1, double 	lng1,  double lat2, double  lng2){
+		
+		CompanyInfo company = new CompanyInfo();
 		
 		final double R = 6371;
 		final double TO_RADIAN = Math.PI/180.0;
@@ -59,7 +65,14 @@ public class GsonView {
 		
 		if( d < 5){//¹Ý°æ 5km
 			System.out.println(d);
-		}		
+			company.id = id;
+			company.address = address;
+			company.title = title;
+			return company;
+			
+		}else{
+			return null;
+		}
 		
 	}
 	

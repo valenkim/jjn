@@ -26,14 +26,16 @@ public class ScoreManager extends HttpServlet {
 
 		String userid = request.getParameter("userid").toString();
 		
-		ArrayList<Route> t;
-		ArrayList<Route> s;
-			
-		t = newscore.selectallid();
-	    s = newscore.selectallstarscore();
+	    ArrayList<Route> t;
+		
+		t = newscore.selectall();
 
-	   request.setAttribute("userid", t);
-	   request.setAttribute("starscore", s);
+		for(int i=0; i<t.size(); i++){
+			   request.setAttribute("userid"+i, t.get(i).userid);
+			   request.setAttribute("starscore"+i, t.get(i).starscore);
+			}
+
+			request.setAttribute("count",t.size());
 
 	   ServletContext context = request.getSession().getServletContext();
 	   RequestDispatcher rd  = context.getRequestDispatcher("/seeScore.jsp");

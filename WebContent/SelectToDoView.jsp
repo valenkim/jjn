@@ -14,8 +14,13 @@
 <form method="get" action="StatCityManager">
 <input type="submit" value="이동하기"><p>
 </form>
+<form method="get" action="InputAddressForm.jsp">
 <input type="submit" value="식사하기"><p>
+
+
 <input type="submit" value="숙박하기"><p>
+
+</form>
 
 <form method="post" action="CloseManager">
 	<input type="submit" value="여행 완료하기"><p>

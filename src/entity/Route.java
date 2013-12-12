@@ -19,11 +19,11 @@ public class Route {
 	ResultSet rs = null;
 	
 	
-public ArrayList<Route> selectallid(){
+public ArrayList<Route> selectall(){
 	try{
 		conn = con.setDB(conn);
 	
-		String sql="SELECT userid From routeall";
+		String sql="SELECT userid, starscore From routeall";
 		pstmt  = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery(sql);
 
@@ -32,33 +32,6 @@ public ArrayList<Route> selectallid(){
 	   while(rs.next()){
 		   Route mm = new Route();
 		   mm.userid = rs.getString("userid");
-		   m.add(mm);
-	   }		
-	 	con.closeDB(conn, pstmt);
-	 	
-		return m;
-    	
-	
-	 }catch(Exception e){
-		  e.printStackTrace();
-		 
-	 }
-	return null;
-
-}
-
-public ArrayList<Route> selectallstarscore(){
-	try{
-		conn = con.setDB(conn);
-	
-		String sql="SELECT * From routeall";
-		pstmt  = conn.prepareStatement(sql);
-		rs = pstmt.executeQuery(sql);
-
-		ArrayList <Route> m = new ArrayList<Route>();
-		
-	   while(rs.next()){
-		   Route mm = new Route();
 		   mm.starscore = rs.getString("starscore");
 		   m.add(mm);
 	   }		
@@ -74,6 +47,7 @@ public ArrayList<Route> selectallstarscore(){
 	return null;
 
 }
+
 
 
 public ArrayList<Route> selectuserid(String userid){

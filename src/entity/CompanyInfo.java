@@ -4,7 +4,9 @@ import db.DBconnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class CompanyInfo {
@@ -13,23 +15,78 @@ public class CompanyInfo {
 	public String address;
 	public double lng;
 	public double lat;
+	public String title;
 	
 	Connection conn;
 	PreparedStatement pstmt;
+	ResultSet rs;
 	
-	public void selectCompany() throws SQLException{
+	public ArrayList<CompanyInfo> selectCompany() throws SQLException{
 		DBconnection con = new DBconnection();
 		
-		conn = con.setDB(conn);
+		try{
+			conn = con.setDB(conn);
+			
+			String sql = "SELECT userId, name, address, lat, lng FROM CompanyInfo";
+			
+			
+			pstmt  = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(sql);
+	
+			ArrayList <CompanyInfo> c = new ArrayList<CompanyInfo>();
+			
+		   while(rs.next()){
+			   CompanyInfo ci = new CompanyInfo();
+			   ci.id = rs.getInt("userId");
+			   ci.address = rs.getString("address");
+			   ci.lat = rs.getDouble("lat");
+			   ci.lng = rs.getDouble("lng");
+			   ci.title = rs.getString("name");
+			   
+			   c.add(ci);
+		   }		
+		 	
+		   con.closeDB(conn, pstmt);
+		 	
+			return c;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
 		
-		String sql = "SELECT name, address, lat, lng FROM CompanyInfo";
 		
+	}
+	public CompanyInfo findMealCompany(int id) throws SQLException{
+		DBconnection con = new DBconnection();
 		
-		
-		
-		
-		
-		con.closeDB(conn, pstmt);
+		try{
+			conn = con.setDB(conn);
+			
+			String sql = "SELECT userId, name, address, lat, lng FROM CompanyInfo WHERE userId = "+ id;
+			
+			
+			pstmt  = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(sql);
+	
+			CompanyInfo ci = new CompanyInfo();
+				
+		   while(rs.next()){
+			   ci.id = rs.getInt("userId");
+			   ci.address = rs.getString("address");
+			   ci.lat = rs.getDouble("lat");
+			   ci.lng = rs.getDouble("lng");
+			   ci.title = rs.getString("name");
+		   }		
+		 	
+		   con.closeDB(conn, pstmt);
+		 	
+			return ci;
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
 		
 		
 	}

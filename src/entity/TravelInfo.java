@@ -130,10 +130,15 @@ public class TravelInfo {
 			System.out.println(i);
 			
 			id++;
-			String udsql="INSERT INTO Travel (id, startTime) VALUE ('"+id+"', '"+i+"')";
+			String sql="INSERT INTO Travel (id, startTime) VALUE (?,?)";
 			
-			System.out.println("new");
-			pstmt=conn.prepareStatement(udsql);
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, id);
+			pstmt.setInt(2, i);
+			
+			System.out.println("new!!");
+			
 			pstmt.executeUpdate();		
 			
 			con.closeDB(conn, pstmt);
@@ -212,14 +217,17 @@ public class TravelInfo {
 			
 			conn = con.setDB(conn);
 			
-			String upsql = "SELECT id FROM Travel ORDER BY  id DESC LIMIT 1";
+			String upsql = "SELECT id,startTime FROM Travel ORDER BY  id DESC LIMIT 1";
 			
 			pstmt  = conn.prepareStatement(upsql);
 			rs = pstmt.executeQuery(upsql);
 
 			int id = 0; 
+			int startTime = 8;
+			
 			while(rs.next()){
 			   id = rs.getInt("id");
+			   startTime = rs.getInt("startTime");
 		   }
 		   
 			rs.close();
@@ -230,11 +238,58 @@ public class TravelInfo {
 			pstmt.executeUpdate();
 			
 			con.closeDB(conn, pstmt);
-			return true;
+			
+			TravelInfo t = new TravelInfo();
+			t.updateStartTime(id, startTime, 2);
+			
 			
 		}catch(Exception e){
 			  e.printStackTrace();
 		}
 		return false;		
 	}
+	
+	public boolean saveMeal(CompanyInfo c){
+		try{
+			conn = con.setDB(conn);
+			
+			String upsql = "SELECT id, startTime FROM Travel ORDER BY  id DESC LIMIT 1";
+			
+			pstmt  = conn.prepareStatement(upsql);
+			rs = pstmt.executeQuery(upsql);
+	
+			int id = 0; 
+			int startTime = 0;
+			
+		   while(rs.next()){
+			   id = rs.getInt("id");
+			   startTime = rs.getInt("startTime");
+		   }		
+		   
+			String sql="UPDATE Travel set mealName = ?, mealCount = ?, timer = ? WHERE id = "+id;
+			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, c.title);
+			pstmt.setInt(2, 1);
+			pstmt.setInt(3, 2);
+	
+			
+			pstmt.executeUpdate();
+		
+			con.closeDB(conn, pstmt);
+			
+			//startTime °»½Å
+			TravelInfo ti = new TravelInfo();			
+			
+			ti.updateStartTime(id, startTime, 2);
+
+			return true;
+			
+		}catch(Exception e){
+			  e.printStackTrace();
+		}		
+		
+		return false;
+	}
+		
 }

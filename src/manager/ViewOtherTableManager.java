@@ -22,13 +22,16 @@ public class ViewOtherTableManager extends HttpServlet {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 
-		ArrayList<Route> t;
-		ArrayList<Route> s;
+	    ArrayList<Route> t;
 		
-		t = newroute.selectallid();
-	    s = newroute.selectallstarscore();
-	   request.setAttribute("userid", t);
-	   request.setAttribute("starscore", s);
+		t = newroute.selectall();
+
+		for(int i=0; i<t.size(); i++){
+			   request.setAttribute("userid"+i, t.get(i).userid);
+			   request.setAttribute("starscore"+i, t.get(i).starscore);
+			}
+
+			request.setAttribute("count",t.size());
 
 	   ServletContext context = request.getSession().getServletContext();
 	   RequestDispatcher rd  = context.getRequestDispatcher("/ViewOtherRoute.jsp");

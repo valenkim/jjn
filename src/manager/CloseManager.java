@@ -84,7 +84,7 @@ public class CloseManager extends HttpServlet{
 				endDate = rs.getDate("endDate");
 			}
 			
-			if(startDate == endDate){
+			if(startDate.equals(endDate)){
 				System.out.println("여행 루트 완성!!");
 			}
 			else{

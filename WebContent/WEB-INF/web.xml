@@ -108,5 +108,47 @@
      <servlet-name>ViewOtherTableManager</servlet-name>
      <url-pattern>/ViewOtherTableManager</url-pattern>
    </servlet-mapping>
+   
+   <servlet>
+  <description /> 
+  <display-name>Login_company</display-name> 
+  <servlet-name>Login_company</servlet-name> 
+  <servlet-class>manager.Login_company</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>Login_company</servlet-name> 
+  <url-pattern>/Login_company</url-pattern> 
+  </servlet-mapping>
+ <servlet>
+  <description /> 
+  <display-name>Login_traveler</display-name> 
+  <servlet-name>Login_traveler</servlet-name> 
+  <servlet-class>manager.Login_traveler</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>Login_traveler</servlet-name> 
+  <url-pattern>/Login_traveler</url-pattern> 
+  </servlet-mapping>
+ <servlet>
+  <description /> 
+  <display-name>RegistrationManager_T</display-name> 
+  <servlet-name>RegistrationManager_T</servlet-name> 
+  <servlet-class>manager.RegistrationManager_T</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>RegistrationManager_T</servlet-name> 
+  <url-pattern>/RegistrationManager_T</url-pattern> 
+  </servlet-mapping>
+ <servlet>
+  <description /> 
+  <display-name>RegistrationManager_C</display-name> 
+  <servlet-name>RegistrationManager_C</servlet-name> 
+  <servlet-class>manager.RegistrationManager_C</servlet-class> 
+  </servlet>
+ <servlet-mapping>
+  <servlet-name>RegistrationManager_C</servlet-name> 
+  <url-pattern>/RegistrationManager_C</url-pattern> 
+  </servlet-mapping>
+   
  
 </web-app>

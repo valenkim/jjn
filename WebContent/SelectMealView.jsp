@@ -7,13 +7,25 @@
 <title>음식점 선택하기</title>
 </head>
 <body>
-<form action="MealManager" method="get">
+<form action="MealManager" method="post">
 <%
-double lng = Double.valueOf(request.getAttribute("lng").toString());
-double  lat =Double.valueOf( request.getAttribute("lat").toString());
-%>
+//double lng = Double.valueOf(request.getAttribute("lng").toString());
+//double  lat =Double.valueOf( request.getAttribute("lat").toString());
 
-좌표 <%=lng%>, <%=lat %>
+String count =request.getAttribute("count").toString();
+int n = Integer.parseInt(count);
+%>
+<select name="userId"  >
+ <%for(int i =0; i<n; i++){ 
+ 	%><option value=<%=request.getAttribute("userId"+i)%>>
+상호명 : <%=request.getAttribute("title"+i)%><p>
+, 주소 : <%= request.getAttribute("address"+i)%></p>
+
+</option>
+<%} %>
+	<input type="submit" value="선택">
+
+</select>
 </form>
 </body>
 </html>
