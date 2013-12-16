@@ -1,4 +1,4 @@
-package Info;
+package mappingInfo;
 
 public class Item {
 	public double lng;

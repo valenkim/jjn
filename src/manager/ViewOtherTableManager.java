@@ -11,30 +11,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import db.DBconnection;
-import entity.Route;
+import entity.RouteInfo;
 
 public class ViewOtherTableManager extends HttpServlet {
 	DBconnection con = new DBconnection();
-	Route newroute = new Route();
+	RouteInfo newroute = new RouteInfo();
 	
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 
-	    ArrayList<Route> t;
+	    ArrayList<RouteInfo> t;
 		
 		t = newroute.selectall();
 
 		for(int i=0; i<t.size(); i++){
 			   request.setAttribute("userid"+i, t.get(i).userid);
-			   request.setAttribute("starscore"+i, t.get(i).starscore);
+			   request.setAttribute("starscore"+i, t.get(i).score);
 			}
 
 			request.setAttribute("count",t.size());
 
 	   ServletContext context = request.getSession().getServletContext();
-	   RequestDispatcher rd  = context.getRequestDispatcher("/ViewOtherRoute.jsp");
+	   RequestDispatcher rd  = context.getRequestDispatcher("/OtherRouteView.jsp");
 		
 		rd.forward(request, response);
 	}

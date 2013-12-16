@@ -10,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import db.DBconnection;
-import entity.Route;
 import entity.Score;
 
 public class ScoreManager extends HttpServlet {
@@ -24,21 +23,22 @@ public class ScoreManager extends HttpServlet {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 
-		String userid = request.getParameter("userid").toString();
-		
-	    ArrayList<Route> t;
+	    ArrayList<Score> t;
 		
 		t = newscore.selectall();
-
-		for(int i=0; i<t.size(); i++){
+        int i;
+        
+		for(i=0; i<t.size(); i++){
 			   request.setAttribute("userid"+i, t.get(i).userid);
-			   request.setAttribute("starscore"+i, t.get(i).starscore);
+			   request.setAttribute("routename"+i, t.get(i).routename);
+			   request.setAttribute("score"+i, t.get(i).score);
 			}
 
-			request.setAttribute("count",t.size());
+			request.setAttribute("count",i);
+			System.out.println(t.size());
 
 	   ServletContext context = request.getSession().getServletContext();
-	   RequestDispatcher rd  = context.getRequestDispatcher("/seeScore.jsp");
+	   RequestDispatcher rd  = context.getRequestDispatcher("/SeeScoreView.jsp");
 		
 		rd.forward(request, response);
 	}
@@ -46,18 +46,23 @@ public class ScoreManager extends HttpServlet {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 		
-		String userid = request.getParameter("userid").toString();
-		String starscore = request.getParameter("starscore").toString();
+		String routename = request.getParameter("routename").toString();
+		String sco = request.getParameter("score").toString();
+		int scor = Integer.parseInt(sco);
+		
+		ArrayList<Score> s;
+		s = newscore.selectscore(routename);
+		int score = scor + s.get(0).score;
 		
 		Score nscore = new Score();
 		
-		if(nscore.saveScore(userid, starscore)) {
+		if(nscore.updateScore(routename, score)) {
 			response.setCharacterEncoding("utf-8");
-		    System.out.println("ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+		    System.out.println("º°Á¡ ±â·ÏÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù..");
 		}
 		
 		ServletContext context = request.getSession().getServletContext();
-		RequestDispatcher rd  = context.getRequestDispatcher("/seeScore.jsp");
+		RequestDispatcher rd  = context.getRequestDispatcher("/AdminUI.jsp");
 		
 		rd.forward(request, response);
 		

@@ -1,7 +1,6 @@
 package manager;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -16,13 +15,13 @@ import entity.TravelInfo;
 public class TimeManager extends HttpServlet {
 
 	DBconnection con = new DBconnection();
-	TimeTable time = new TimeTable();
 	
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 
+		TimeTable time = new TimeTable();
 		ArrayList<TimeTable> t;
 		TimeTable s;
 			

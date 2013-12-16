@@ -65,90 +65,111 @@
     <servlet-name>DateManager</servlet-name>
     <url-pattern>/DateManager</url-pattern>
   </servlet-mapping>
-  
-     <servlet>
-     <servlet-name>ScoreManager</servlet-name>
-     <servlet-class>manager.ScoreManager</servlet-class>
-   </servlet>
-   <servlet-mapping>
-     <servlet-name>ScoreManager</servlet-name>
-     <url-pattern>/ScoreManager</url-pattern>
-   </servlet-mapping>
-      <servlet>
-     <servlet-name>FreeManager</servlet-name>
-     <servlet-class>manager.FreeManager</servlet-class>
-   </servlet>
-   <servlet-mapping>
-     <servlet-name>FreeManager</servlet-name>
-     <url-pattern>/FreeManager</url-pattern>
-   </servlet-mapping>
+  <servlet>
+    <servlet-name>ScoreManager</servlet-name>
+    <servlet-class>manager.ScoreManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScoreManager</servlet-name>
+    <url-pattern>/ScoreManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FreeManager</servlet-name>
+    <servlet-class>manager.FreeManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FreeManager</servlet-name>
+    <url-pattern>/FreeManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MealManager</servlet-name>
+    <servlet-class>manager.MealManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MealManager</servlet-name>
+    <url-pattern>/MealManager</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SleepManager</servlet-name>
+    <servlet-class>manager.SleepManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SleepManager</servlet-name>
+    <url-pattern>/SleepManager</url-pattern>
+  </servlet-mapping>
 
   <servlet>
-     <servlet-name>MealManager</servlet-name>
-     <servlet-class>manager.MealManager</servlet-class>
-   </servlet>
-   <servlet-mapping>
-     <servlet-name>MealManager</servlet-name>
-     <url-pattern>/MealManager</url-pattern>
-   </servlet-mapping>
-   
-   <servlet>
-     <servlet-name>MaintainRoutemanager</servlet-name>
-     <servlet-class>manager.MaintainRoutemanager</servlet-class>
-   </servlet>
-   <servlet-mapping>
-     <servlet-name>MaintainRoutemanager</servlet-name>
-     <url-pattern>/MaintainRoutemanager</url-pattern>
-   </servlet-mapping>
-   <servlet>
-     <servlet-name>ViewOtherTableManager</servlet-name>
-     <servlet-class>manager.ViewOtherTableManager</servlet-class>
-   </servlet>
-   <servlet-mapping>
-     <servlet-name>ViewOtherTableManager</servlet-name>
-     <url-pattern>/ViewOtherTableManager</url-pattern>
-   </servlet-mapping>
-   
-   <servlet>
-  <description /> 
-  <display-name>Login_company</display-name> 
-  <servlet-name>Login_company</servlet-name> 
-  <servlet-class>manager.Login_company</servlet-class> 
+    <servlet-name>SaveManager</servlet-name>
+    <servlet-class>manager.SaveManager</servlet-class>
   </servlet>
- <servlet-mapping>
-  <servlet-name>Login_company</servlet-name> 
-  <url-pattern>/Login_company</url-pattern> 
+  <servlet-mapping>
+    <servlet-name>SaveManager</servlet-name>
+    <url-pattern>/SaveManager</url-pattern>
   </servlet-mapping>
  <servlet>
-  <description /> 
-  <display-name>Login_traveler</display-name> 
-  <servlet-name>Login_traveler</servlet-name> 
-  <servlet-class>manager.Login_traveler</servlet-class> 
+    <servlet-name>SelectRouteManager</servlet-name>
+    <servlet-class>manager.SelectRouteManager</servlet-class>
   </servlet>
- <servlet-mapping>
-  <servlet-name>Login_traveler</servlet-name> 
-  <url-pattern>/Login_traveler</url-pattern> 
+  <servlet-mapping>
+    <servlet-name>SelectRouteManager</servlet-name>
+    <url-pattern>/SelectRouteManager</url-pattern>
   </servlet-mapping>
  <servlet>
-  <description /> 
-  <display-name>RegistrationManager_T</display-name> 
-  <servlet-name>RegistrationManager_T</servlet-name> 
-  <servlet-class>manager.RegistrationManager_T</servlet-class> 
+    <servlet-name>DeleteRouteManager</servlet-name>
+    <servlet-class>manager.DeleteRouteManager</servlet-class>
   </servlet>
- <servlet-mapping>
-  <servlet-name>RegistrationManager_T</servlet-name> 
-  <url-pattern>/RegistrationManager_T</url-pattern> 
+  <servlet-mapping>
+    <servlet-name>DeleteRouteManager</servlet-name>
+    <url-pattern>/DeleteRouteManager</url-pattern>
   </servlet-mapping>
- <servlet>
-  <description /> 
-  <display-name>RegistrationManager_C</display-name> 
-  <servlet-name>RegistrationManager_C</servlet-name> 
-  <servlet-class>manager.RegistrationManager_C</servlet-class> 
+    <servlet>
+    <servlet-name>Login_company</servlet-name>
+    <servlet-class>manager.Login_company</servlet-class>
   </servlet>
- <servlet-mapping>
-  <servlet-name>RegistrationManager_C</servlet-name> 
-  <url-pattern>/RegistrationManager_C</url-pattern> 
+  <servlet-mapping>
+    <servlet-name>Login_company</servlet-name>
+    <url-pattern>/Login_company</url-pattern>
   </servlet-mapping>
-   
- 
+  <servlet>
+       <servlet-name>Login_traveler</servlet-name>
+    <servlet-class>manager.Login_traveler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login_traveler</servlet-name>
+    <url-pattern>/Login_traveler</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegistrationManager_T</servlet-name>
+    <servlet-class>manager.RegistrationManager_T</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationManager_T</servlet-name>
+    <url-pattern>/RegistrationManager_T</url-pattern>
+  </servlet-mapping>
+  <servlet>
+
+    <servlet-name>RegistrationManager_C</servlet-name>
+    <servlet-class>manager.RegistrationManager_C</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationManager_C</servlet-name>
+    <url-pattern>/RegistrationManager_C</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewUserManager</servlet-name>
+    <servlet-class>manager.ViewUserManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewUserManager</servlet-name>
+    <url-pattern>/ViewUserManager</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ViewOtherRouteManager</servlet-name>
+    <servlet-class>manager.ViewOtherRouteManager</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewOtherRouteManager</servlet-name>
+    <url-pattern>/ViewOtherRouteManager</url-pattern>
+  </servlet-mapping>
 </web-app>

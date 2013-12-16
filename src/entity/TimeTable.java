@@ -26,7 +26,6 @@ public class TimeTable{
 			
 			conn = con.setDB(conn);
 
-			System.out.println("전체 행 세기");
 			
 			String sql="SELECT time FROM timetablestore";
 			pstmt  = conn.prepareStatement(sql);

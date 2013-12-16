@@ -22,6 +22,22 @@ public class TravelInfo {
 	public int startTime;
 	public int startDate;
 	public int endDate;
+	public String stat;
+	public String dest;
+	public int timeCount;
+	public int mealCount;
+	public int sleepCount;
+	public int freeCount;
+	public int trainCount;
+	public int dateCount;
+	public int ctype;
+	public Date sDate;
+	public Date eDate;
+	public String companyName;
+	public String userid;
+	public String score;
+	
+	
 	
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -249,7 +265,7 @@ public class TravelInfo {
 		return false;		
 	}
 	
-	public boolean saveMeal(CompanyInfo c){
+	public boolean saveMealSleep(CompanyInfo c, int ctype, int timer){
 		try{
 			conn = con.setDB(conn);
 			
@@ -266,12 +282,15 @@ public class TravelInfo {
 			   startTime = rs.getInt("startTime");
 		   }		
 		   
-			String sql="UPDATE Travel set mealName = ?, mealCount = ?, timer = ? WHERE id = "+id;
+			String sql="UPDATE Travel set companyName = ?, ctype = ?, timer = ?, type = ?, mealCount = ?, sleepCount = ? WHERE id = "+id;
 			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, c.title);
-			pstmt.setInt(2, 1);
-			pstmt.setInt(3, 2);
+			pstmt.setInt(2, ctype);
+			pstmt.setInt(3, timer);
+			pstmt.setString(4, c.type);
+			pstmt.setInt(5, c.mealCount);
+			pstmt.setInt(6, c.sleepCount);
 	
 			
 			pstmt.executeUpdate();
@@ -280,8 +299,9 @@ public class TravelInfo {
 			
 			//startTime 갱신
 			TravelInfo ti = new TravelInfo();			
-			
-			ti.updateStartTime(id, startTime, 2);
+			if(ctype == 1){ //만약 음식점이면
+				ti.updateStartTime(id, startTime, 2);
+			}
 
 			return true;
 			
@@ -292,4 +312,99 @@ public class TravelInfo {
 		return false;
 	}
 		
+	
+	public boolean saveRoute(){
+		
+		
+		try{
+			RouteInfo r = new RouteInfo();
+
+			conn = con.setDB(conn);			
+			String sql = "SELECT userid FROM Travel ORDER BY  id DESC LIMIT 1";
+			pstmt  = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(sql);
+			
+			while(rs.next())
+				r.userid = rs.getString("userid");
+		   
+			rs.close();
+			
+			String upsql = "UPDATE Travel SET freeCount = 1 WHERE id = "+r.userid;
+			
+			pstmt=conn.prepareStatement(upsql);
+			pstmt.executeUpdate();
+			
+			con.closeDB(conn, pstmt);
+			
+			
+		}catch(Exception e){
+			  e.printStackTrace();
+		}
+		return false;		
+				
+	}
+	
+public ArrayList<TravelInfo> loadTravelInfo(){
+		
+		try{
+			ArrayList<TravelInfo> t = new ArrayList<TravelInfo>();
+			conn = con.setDB(conn);		
+			
+			String sql = "SELECT id, startTime, timeCount, stat, train, trainCount, timer, ctype, dest, startDate,"
+	 			+ " endDate, dateCount, freeCount, companyName, userid, starscore  FROM Travel";
+			pstmt  = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery(sql);
+			
+			while(rs.next()){
+				TravelInfo ti = new TravelInfo();
+				ti.id = rs.getInt("id");
+				ti.userid = rs.getString("userid");
+				ti.startTime = rs.getInt("startTime");
+				ti.timeCount = rs.getInt("timeCount");
+				ti.stat = rs.getString("stat");
+				ti.trainCount = rs.getInt("trainCount");
+				ti.timer = rs.getInt("timer");
+				ti.ctype = rs.getInt("ctype");
+				ti.dest = rs.getString("dest");
+				ti.sDate = rs.getDate("startDate");
+				ti.eDate = rs.getDate("endDate");
+				ti.dateCount = rs.getInt("dateCount");
+				ti.freeCount = rs.getInt("freeCount");
+				ti.companyName = rs.getString("companyName");
+				ti.score = rs.getString("starscore");
+				ti.train = rs.getString("train");
+				
+				t.add(ti);
+			}
+			System.out.println("다 받아옴");
+			rs.close();
+			con.closeDB(conn, pstmt);
+			return t;
+			
+			
+		}catch(Exception e){
+			  e.printStackTrace();
+		}
+		return null;
+				
+	}
+
+public void deleteTravel(){
+	try{
+		conn = con.setDB(conn);
+		
+		String sql = "Delete FROM Travel";
+		pstmt  = conn.prepareStatement(sql);
+		pstmt.executeUpdate(sql);
+		
+		sql = "INSERT INTO Travel (id, dateCount) VALUE ('1' , '1')";
+		pstmt=conn.prepareStatement(sql);
+		pstmt.executeUpdate();		
+	
+		con.closeDB(conn, pstmt);
+		
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+}
 }

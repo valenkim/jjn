@@ -5,11 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>안녕하세요</title>
-<form  action="SelectDateView.jsp">
-	<input type="submit" value="여행 기간 선택하기"><p>
-</form>
+
 </head>
 <body>
+<form  action="SelectDateView.jsp">
+	<input type="submit" value="여행 루트 만들기"><p>
+</form>
+
+<form action="ViewOtherRouteManager">
+	<input type="submit" value="루트 목록 보기"><p>
+</form>
 
 </body>
 </html>

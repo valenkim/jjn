@@ -1,4 +1,4 @@
-package gson;
+package mapping;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

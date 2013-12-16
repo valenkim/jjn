@@ -14,12 +14,11 @@
 <form method="get" action="StatCityManager">
 <input type="submit" value="이동하기"><p>
 </form>
-<form method="get" action="InputAddressForm.jsp">
+<form method="get" action="InputMealAddressView.jsp">
 <input type="submit" value="식사하기"><p>
-
-
+</form>
+<form method="get" action="InputSleepAddressView.jsp">
 <input type="submit" value="숙박하기"><p>
-
 </form>
 
 <form method="post" action="CloseManager">
@@ -31,19 +30,20 @@
 	<input type="submit" value="자유 여행하기"><p>
 </form>
 
-
-
 <form method="get" action="CloseManager">
 	<input type="submit" value = "취소하기"><p>
 </form>
 
-<input type="submit" value="저장하기"><p>
 
 -----------------------------------------------------------<p>
 <form method="get" action="TimeTableManager">
 	<input type="submit" value="여행스케줄 보기"><p>
-	<input type="submit" value="끝내기"><p>
 </form>
+<form method="get" action="SelectSaveView.jsp">
+<input type="submit" value="저장하기"><p>
+</form>
+
+
 
 
 </body>

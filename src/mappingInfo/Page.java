@@ -1,4 +1,4 @@
-package Info;
+package mappingInfo;
 
 import java.util.List;
 

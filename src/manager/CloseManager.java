@@ -34,21 +34,11 @@ public class CloseManager extends HttpServlet{
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		
+		TravelInfo t = new TravelInfo();
 		
 		try{
 			
-			conn = con.setDB(conn);
-			
-			String sql = "Delete FROM Travel";
-			pstmt  = conn.prepareStatement(sql);
-			pstmt.executeUpdate(sql);
-			
-			sql = "INSERT INTO Travel (id, dateCount) VALUE ('1' , '1')";
-			pstmt=conn.prepareStatement(sql);
-			pstmt.executeUpdate();		
-	
-			con.closeDB(conn, pstmt);
+			t.deleteTravel();
 				
 			
 		}catch(Exception e){
@@ -56,7 +46,7 @@ public class CloseManager extends HttpServlet{
 		}finally{
 			
 			ServletContext context = request.getSession().getServletContext();
-			RequestDispatcher rd  = context.getRequestDispatcher("/SelectToDoView.jsp");
+			RequestDispatcher rd  = context.getRequestDispatcher("/TravelerUI.jsp");
 			
 			rd.forward(request, response);
 		
@@ -116,7 +106,7 @@ public class CloseManager extends HttpServlet{
 		}finally{
 			
 			ServletContext context = request.getSession().getServletContext();
-			RequestDispatcher rd  = context.getRequestDispatcher("/SelectToDoView.jsp");
+			RequestDispatcher rd  = context.getRequestDispatcher("/TravelerUI.jsp");
 			
 			rd.forward(request, response);
 		

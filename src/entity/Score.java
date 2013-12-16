@@ -10,27 +10,29 @@ import db.DBconnection;
 
 public class Score {
 	public String userid;
-	public String starscore;
+	public String routename;
+	public int score;
 
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	DBconnection con = new DBconnection();
 	ResultSet rs = null;
 	
-public ArrayList<Route> selectall(){
+public ArrayList<Score> selectall(){
 		try{
 			conn = con.setDB(conn);
 		
-			String sql="SELECT userid, starscore From routeall";
+			String sql="SELECT userid, routename, score From RouteInfo";
 			pstmt  = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery(sql);
 
-			ArrayList <Route> m = new ArrayList<Route>();
+			ArrayList <Score> m = new ArrayList<Score>();
 			
 		   while(rs.next()){
-			   Route mm = new Route();
+			   Score mm = new Score();
 			   mm.userid = rs.getString("userid");
-			   mm.starscore = rs.getString("starscore");
+			   mm.routename = rs.getString("routename");
+			   mm.score = rs.getInt("score");
 			   m.add(mm);
 		   }		
 		 	con.closeDB(conn, pstmt);
@@ -46,7 +48,7 @@ public ArrayList<Route> selectall(){
 
 	}
 
-public ArrayList<Route> selectuserid(String userid){
+public ArrayList<RouteInfo> selectuserid(String userid){
 		
 		try{
 			conn = con.setDB(conn);
@@ -55,10 +57,10 @@ public ArrayList<Route> selectuserid(String userid){
 			pstmt  = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery(sql);
 	
-			ArrayList <Route> m = new ArrayList<Route>();
+			ArrayList <RouteInfo> m = new ArrayList<RouteInfo>();
 			
 		   while(rs.next()){
-			   Route mm = new Route();
+			   RouteInfo mm = new RouteInfo();
 			   mm.userid = rs.getString("userid");
 			   m.add(mm);
 		   }		
@@ -75,20 +77,20 @@ public ArrayList<Route> selectuserid(String userid){
 
 	}
 
-public ArrayList<Route> selectstarscore(String userid){
+public ArrayList<Score> selectscore(String routename){
 
 		try{
 			conn = con.setDB(conn);
 			
-			String sql = "SELECT starscore FROM routeall where userid = '"+userid+"'";
+			String sql = "SELECT score FROM RouteInfo where routename = '"+routename+"'";
 			pstmt  = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery(sql);
 			
-			ArrayList<Route> m = new ArrayList <Route>();
+			ArrayList<Score> m = new ArrayList <Score>();
 			
 		   while(rs.next()){
-			   Route mm = new Route();
-			   mm.starscore = rs.getString("starscore");
+			   Score mm = new Score();
+			   mm.score = rs.getInt("score");
 			   m.add(mm);
 		   }		
 		   
@@ -106,10 +108,10 @@ public ArrayList<Route> selectstarscore(String userid){
 	}
 
 
-public boolean saveScore(String userid, String starscore){
+public boolean saveScore(String routename, int score){
 	try{
 		conn = con.setDB(conn);
-	 	String udsql="INSERT INTO routeall (userid, starscore) VALUE ('"+userid+"', '"+starscore+"')";
+	 	String udsql="INSERT INTO RouteInfo (routename, score) VALUE ('"+userid+"', '"+score+"')";
 		
 		System.out.println("new");
 		pstmt=conn.prepareStatement(udsql);
@@ -124,16 +126,16 @@ public boolean saveScore(String userid, String starscore){
 	
    } 
 
-public boolean updateScore(String userid, String starscore){
+public boolean updateScore(String routename, int score){
 	try{
 		conn = con.setDB(conn);
 		
-		String sql="UPDATE routeall SET starscore=? WHERE userid = ?";
+		String sql="UPDATE RouteInfo SET score=? WHERE routename = ?";
 		
 		pstmt=conn.prepareStatement(sql);
 		
-		pstmt.setString(1, starscore);
-		pstmt.setString(2, userid);
+		pstmt.setInt(1, score);
+		pstmt.setString(2, routename);
 		pstmt.executeUpdate();
 	
 		con.closeDB(conn, pstmt);
@@ -147,15 +149,15 @@ public boolean updateScore(String userid, String starscore){
 	
 }
 
-public boolean deleteScore(String userid){
+public boolean deleteScore(String routename){
 	try{
 		conn = con.setDB(conn);
 		
-		String sql="delete from routeall where userid=?";
+		String sql="delete from RouteInfo where routename=?";
 		
 		pstmt=conn.prepareStatement(sql);
 		
-		pstmt.setString(1, userid);
+		pstmt.setString(1, routename);
 		pstmt.executeUpdate();
 	
 		con.closeDB(conn, pstmt);

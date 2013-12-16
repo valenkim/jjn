@@ -1,11 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>시간표</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 </head>
+<body>
 <%
 	String count =request.getAttribute("count").toString();
 	int n = Integer.parseInt(count);
@@ -72,6 +73,11 @@ for(i=0; i<n; i++){
 
 if (!first) { %></table><% } %>
 
-
+<br><form action="ScoreManager" method="post" >
+				별점매기기<br>
+		    경로이름 : <input type="text" name="routename" value=<%=request.getAttribute("routename0") %>><br>
+			점수 : <input type="text" name="score"><br>
+		 	<input type="submit" value="입력"> 
+<br></form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package gson;
+package mapping;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mapping.GsonUtil;
+import mappingInfo.*;
+
 import com.google.gson.Gson;
 
-import Info.*;
-import gson.GsonUtil;
 import entity.CompanyInfo;
 
 public class GsonView {
@@ -49,7 +50,7 @@ public class GsonView {
 		return null;
 	}
 
-	public CompanyInfo distance(int id, String address, String title, double lat1, double 	lng1,  double lat2, double  lng2){
+	public CompanyInfo distance(String id, String address, String title, String type, double lat1, double 	lng1,  double lat2, double  lng2){
 		
 		CompanyInfo company = new CompanyInfo();
 		
@@ -68,6 +69,8 @@ public class GsonView {
 			company.id = id;
 			company.address = address;
 			company.title = title;
+			company.type = type;
+			
 			return company;
 			
 		}else{

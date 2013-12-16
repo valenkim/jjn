@@ -19,7 +19,9 @@ int n = Integer.parseInt(count);
  <%for(int i =0; i<n; i++){ 
  	%><option value=<%=request.getAttribute("userId"+i)%>>
 상호명 : <%=request.getAttribute("title"+i)%><p>
-, 주소 : <%= request.getAttribute("address"+i)%></p>
+, 주소 : <%= request.getAttribute("address"+i)%><p>
+, 타입 : <%=request.getAttribute("type"+i) %><p>
+
 
 </option>
 <%} %>

@@ -4,9 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>별점 보기</title>
+<title>주소 입력 하기</title>
 </head>
 <body>
 
+<form action="SleepManager" method="get">
+주소를 입력하세요
+<input type="text" name="add" value="서울시 중랑구 면목2동">
+<input type ="submit"  value="찾기">
+
+
+</form>
 </body>
 </html>

@@ -5,11 +5,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>안녕하세요 관리자모드입니다.</title>
-<form  action="maintainrouteinfoview.jsp">
-	<input type="submit" value="메뉴 들어가기"><p>
-</form>
 </head>
 <body>
+<form action="SelectRouteManager" method="get">
+	<input type="submit" value="삭제할 루트 선택"><p>
+</form>
+
+
+<form action="ViewUserManager" method="Post">
+	<input type="submit" value="회사 정보보기"><p>
+</form>
+<form action="ViewUserManager" method="get">
+	<input type="submit" value="여행자 정보보기"><p>
+</form>
+
+<form action="ScoreManager">
+	<input type="submit" value="별점보기"><p>
+</form>
+
+<form action="ViewOtherRouteManager">
+	<input type="submit" value="루트목록보기"><p>
+</form>
 
 </body>
 </html>
