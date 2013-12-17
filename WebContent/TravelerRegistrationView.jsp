@@ -22,12 +22,12 @@ email: <input type="text" name="email"><br>
 Tel: <input type="text" name="tel"><br>
 
 싫어하는 음식<br>
-<input type="checkbox" name="hate" value="Korea_Traditional_Food">한식
-<input type="checkbox" name="hate" value="America_Food">양식
-<input type="checkbox" name="hate" value="China_Food">중식
-<input type="checkbox" name="hate" value="Japan_Food">일식
-<input type="checkbox" name="hate" value="Korea_Food">분식
-<input type="checkbox" name="hate" value="Etc1">해당없음<br>
+<input type="radio" name="hate" value="한식">한식
+<input type="radio" name="hate" value="양식">양식
+<input type="radio" name="hate" value="중식">중식
+<input type="radio" name="hate" value="일식">일식
+<input type="radio" name="hate" value="분식">분식
+<input type="radio" name="hate" value="기타1">해당없음<br>
 택일<br>
 
 <input type="hidden" name="mode" value="create"><br>

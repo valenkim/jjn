@@ -5,16 +5,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+<%String id =  request.getParameter("id");%>
 </head>
 <body>
-	<form action="AdminUI.jsp" method="post">
+	<form action="RegistrationManager_T" method="post">
 		<table>
 			<tr>
 				<td>회원삭제하기</td>
 			</tr>
 			<tr>
-				<td>ID : <input type="text" name="id"></td>
+				<td>ID : <input type="text" name="id" value=<%=id%>></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="mode" value="delete"> 

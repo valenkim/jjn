@@ -5,10 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<% String id = request.getParameter("id").toString(); %>
+<% String id = request.getParameter("id"); %>
 </head>
 <body>
-	<form action="AdminUI.jsp" method="post">
+	<form action="RegistrationManager_C" method="post">
 		<table>
 			<tr>
 				<td>회원삭제하기</td>
