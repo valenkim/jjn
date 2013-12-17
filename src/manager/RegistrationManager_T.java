@@ -33,8 +33,9 @@ public class RegistrationManager_T extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
-		PrintWriter out = response.getWriter();
-
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 		String mode = request.getParameter("mode").toString();
 	
 		

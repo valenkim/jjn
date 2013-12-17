@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Datepicker - Select a Date Range</title>
+  <title>날짜 선택하기</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -43,6 +43,8 @@
 </head>
 <body>
 <form  method = "get" action="DateManager">
+<h1>여행을 원하는 날짜를 입력하세요. </h1>
+예) 2013-12-13~2013-12-15 (12월 13일, 14일만 여행하기)<p>
 
 <label for="startDate">여행시작일</label>
 <input type="text" id="startDate" name="startDate">

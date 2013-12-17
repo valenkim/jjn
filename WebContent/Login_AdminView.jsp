@@ -22,8 +22,8 @@
 <input type="hidden" name="mode" value="login">
 <input type="submit" name="login" value="로그인">
 <input type="reset" name="logout" value="다시입력">
-관리자
-id : admin
+<p>관리자<p>
+id : admin<p>
 pass : 1234
 
 </a>

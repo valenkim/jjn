@@ -71,10 +71,10 @@ public class TravelInfo {
 			conn = con.setDB(conn);
 			
 			String udsql = "";
-			if(city == "statCity")
-				udsql="UPDATE Travel SET stat = '"+city_name+"', trainCount = 1";
-			else if(city == "destCity")
-				udsql="UPDATE Travel SET dest = '"+city_name+"', trainCount = 1";
+			if(city.equals("statCity"))
+				udsql="UPDATE Travel SET stat = '"+city_name+"', trainCount = 1 WHERE id = 1";
+			else if(city.equals("destCity"))
+				udsql="UPDATE Travel SET dest = '"+city_name+"', trainCount = 1 WHERE id =1";
 			
 			pstmt=conn.prepareStatement(udsql);
 			pstmt.executeUpdate(udsql);
@@ -393,12 +393,32 @@ public void deleteTravel(){
 	try{
 		conn = con.setDB(conn);
 		
-		String sql = "Delete FROM Travel";
+		String userid ="no";
+		String hate ="ÀÏ½Ä";
+		
+		String sql = "SELECT userid, hate FROM Travel WHERE id = 1";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery(sql);
+		
+		while(rs.next()){
+			userid = rs.getString("userid");
+			hate = rs.getString("hate");
+		}
+		rs.close();
+		
+		sql = "Delete FROM Travel";
 		pstmt  = conn.prepareStatement(sql);
 		pstmt.executeUpdate(sql);
 		
-		sql = "INSERT INTO Travel (id, dateCount) VALUE ('1' , '1')";
+		sql = "INSERT INTO Travel (id, dateCount, userid, hate) VALUE (?,?,?,?)";
 		pstmt=conn.prepareStatement(sql);
+		pstmt.setString(1, "1");
+		pstmt.setString(2, "1");
+		pstmt.setString(3, userid);
+		pstmt.setString(4,  hate);
+		
+		
+		
 		pstmt.executeUpdate();		
 	
 		con.closeDB(conn, pstmt);
@@ -406,5 +426,29 @@ public void deleteTravel(){
 	}catch(Exception e){
 		e.printStackTrace();
 	}
+}
+public TravelInfo selectStatCity() {
+	try{
+		TravelInfo t = new TravelInfo();
+		
+		conn = con.setDB(conn);
+		
+		String sql = "SELECT stat, dest From Travel WHERE id = 1";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery(sql);
+		
+		while(rs.next()){
+			t.stat= rs.getString("stat");
+			t.dest = rs.getString("dest");
+		}
+		rs.close();
+		
+		con.closeDB(conn, pstmt);
+		
+		return t;
+	}catch(Exception e){
+		e.printStackTrace();
+	}
+	return null;
 }
 }

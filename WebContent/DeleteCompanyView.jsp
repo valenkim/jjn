@@ -8,7 +8,7 @@
 <% String id = request.getParameter("id").toString(); %>
 </head>
 <body>
-	<form action="RegistrationManager_C" method="post">
+	<form action="AdminUI.jsp" method="post">
 		<table>
 			<tr>
 				<td>회원삭제하기</td>

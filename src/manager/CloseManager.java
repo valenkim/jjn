@@ -106,7 +106,7 @@ public class CloseManager extends HttpServlet{
 		}finally{
 			
 			ServletContext context = request.getSession().getServletContext();
-			RequestDispatcher rd  = context.getRequestDispatcher("/TravelerUI.jsp");
+			RequestDispatcher rd  = context.getRequestDispatcher("/SelectToDoView.jsp");
 			
 			rd.forward(request, response);
 		

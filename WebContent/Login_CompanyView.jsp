@@ -7,7 +7,7 @@
 <title>login_form</title>
 </head>
 <body>
-<form method="post" action ="Login">
+<form method="post" action ="CompanyUI.jsp">
 <table>
 <tr>
 <td>아이디:</td>

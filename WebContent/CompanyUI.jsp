@@ -8,5 +8,15 @@
 </head>
 <body>
 <h1>회사페이지</h1>
+
+<form action="ScoreManager">
+	<input type="submit" value="별점보기"><p>
+</form>
+
+<form action="ViewOtherRouteManager">
+	<input type="submit" value="루트목록보기"><p>
+</form>
+
+
 </body>
 </html>

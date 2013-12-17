@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<form action="RegistrationManager_T" method="post">
+	<form action="AdminUI.jsp" method="post">
 		<table>
 			<tr>
 				<td>회원삭제하기</td>

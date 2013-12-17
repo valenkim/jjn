@@ -35,7 +35,7 @@
 	<td><%=request.getAttribute("pass"+i) %></td>
 	<td><%=request.getAttribute("email"+i) %></td>
 	<td><%=request.getAttribute("tel"+i) %></td>
-	<td><a href='DelectCompanyView.jsp?id=<%=request.getAttribute("id"+i)%>'>삭제</a></td>
+	<td><a href='DeleteCompanyView.jsp?id=<%=request.getAttribute("id"+i)%>'>삭제</a></td>
 	</tr>
 	<%} %>	
 	

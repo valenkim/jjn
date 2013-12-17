@@ -14,8 +14,6 @@
 <form action="Login_TravelerView.jsp">
 <input type="submit" value="여행자로그인하기">
 </form>
-
-아직 구현 안됨
 <form action="Login_AdminView.jsp">
 <input type="submit" value="관리자로그인하기">
 </form>

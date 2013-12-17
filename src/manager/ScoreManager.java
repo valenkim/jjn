@@ -15,6 +15,8 @@ import entity.Score;
 public class ScoreManager extends HttpServlet {
 
 
+	
+
 	DBconnection con = new DBconnection();
 	Score newscore = new Score();
 	
@@ -23,6 +25,9 @@ public class ScoreManager extends HttpServlet {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 	    ArrayList<Score> t;
 		
 		t = newscore.selectall();
@@ -45,6 +50,10 @@ public class ScoreManager extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
+		
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 		
 		String routename = request.getParameter("routename").toString();
 		String sco = request.getParameter("score").toString();

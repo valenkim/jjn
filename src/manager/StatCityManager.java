@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -49,14 +50,16 @@ public class StatCityManager extends HttpServlet {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {
 		
-		String statCity = ""; 
-		statCity = request.getParameter("statCity").toString();
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		String statCity = request.getParameter("statCity");
 		
 		System.out.println(statCity);
+		System.out.println(Arrays.toString(statCity.getBytes()));
 		
 		TravelInfo travel = new TravelInfo();
 		if(travel.saveCity("statCity", statCity)) {
-			response.setCharacterEncoding("utf-8");
+
 		    System.out.println("출발지를 선택하셨습니다.");
 		}
 		

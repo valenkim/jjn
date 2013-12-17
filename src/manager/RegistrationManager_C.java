@@ -34,6 +34,9 @@ public class RegistrationManager_C extends HttpServlet {
 			throws IOException, ServletException {
 
 
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 		String mode = request.getParameter("mode").toString();
 		System.out.print(mode);
 	

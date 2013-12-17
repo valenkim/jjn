@@ -49,7 +49,7 @@ public ArrayList<Movement> selectCity(String statCity){
 
 	}
 
-public ArrayList<Movement> selectMovement(int rowcount, String statCity, String destCity){
+public ArrayList<Movement> selectMovement(String statCity, String destCity){
 
 		try{
 			conn = con.setDB(conn);

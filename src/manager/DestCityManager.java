@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -28,18 +29,20 @@ public class DestCityManager extends HttpServlet {
 		try{
 			
 
-			String statCity = request.getParameter("statCity").toString();
+			TravelInfo t = new TravelInfo();
+			
+			t  = t.selectStatCity();
 			
 			ArrayList<Movement> m = new ArrayList<Movement>();
 
-			m = move.selectCity(statCity);
+			m = move.selectCity(t.stat);
 
 			for(int i=0; i<m.size(); i++){
 			   request.setAttribute("city"+i, m.get(i).city);			
 			}
 
 			request.setAttribute("count",m.size());
-			request.setAttribute("statCity", statCity);
+			request.setAttribute("statCity", t.stat);
 
 			ServletContext context = request.getSession().getServletContext();
 			RequestDispatcher rd  = context.getRequestDispatcher("/SelectDestCityView.jsp");
@@ -53,9 +56,10 @@ public class DestCityManager extends HttpServlet {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {
 		
-		String destCity = request.getParameter("destCity").toString();
+		String destCity = request.getParameter("destCity");
 	
 		System.out.println(destCity);
+		System.out.println(Arrays.toString(destCity.getBytes()));
 		
 		TravelInfo travel = new TravelInfo();
 		

@@ -75,7 +75,7 @@ if (!first) { %></table><% } %>
 
 <br><form action="ScoreManager" method="post" >
 				별점매기기<br>
-		    경로이름 : <input type="text" name="routename" value=<%=request.getAttribute("routename0") %>><br>
+		    경로이름 : <input type="text" name="routename"  value=<%=request.getAttribute("routename0") %>><br>
 			점수 : <input type="text" name="score"><br>
 		 	<input type="submit" value="입력"> 
 <br></form>

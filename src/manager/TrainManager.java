@@ -30,16 +30,14 @@ public class TrainManager extends HttpServlet {
 
 		try{
 
-			conn = con.setDB(conn);
+			TravelInfo t = new TravelInfo();
 			
-			String statCity =request. getParameter("statCity");
-			String destCity =request. getParameter("destCity");
-			
-			System.out.println(statCity+ destCity);
+			t = t.selectStatCity();
 			
 			ArrayList<Movement> m = new ArrayList<Movement>();
-			
-			m = move.selectMovement(m.size(), statCity, destCity);
+			System.out.println(t.stat);
+			System.out.println(t.dest);
+			m = move.selectMovement(t.stat, t.dest);
 			
 			for(int i=0; i<m.size(); i++){
 			   request.setAttribute("train"+i, m.get(i).train);		

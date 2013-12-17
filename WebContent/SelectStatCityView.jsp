@@ -8,20 +8,17 @@
 </head>
 <body>
 <h1>출발 도시를 선택하세요</h1>
-<form action="CityManager" method="get">
+
 도시선택:
 <%
 	String count =request.getAttribute("count").toString();
 	int n = Integer.parseInt(count);
 	
 %>
-</form>
-
-<jsp:useBean id="datebean" class="entity.TravelInfo" scope="session"/>
 <form method = "post" action="StatCityManager">
 	<select name="statCity"  >
 	<% for(int i =0; i<n; i++){ %>
-			<option  value=<%= request.getAttribute("city"+i) %>><%= request.getAttribute("city"+i) %></option>
+			<option  value="<%= request.getAttribute("city"+i) %>"><%= request.getAttribute("city"+i) %></option>
 	<%} %>	
 		</select>	
 	<input type="submit" value="완료"><p>

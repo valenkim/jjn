@@ -21,6 +21,10 @@ public class ViewOtherTableManager extends HttpServlet {
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
+		
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 
 	    ArrayList<RouteInfo> t;
 		

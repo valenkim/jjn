@@ -24,6 +24,9 @@ public class MealManager extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 		GsonView gv = new GsonView();
 		
 		String add = request.getParameter("add");
@@ -66,6 +69,9 @@ public class MealManager extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");	
+		
 		CompanyInfo c = new CompanyInfo();
 		TravelInfo t = new TravelInfo();
 		

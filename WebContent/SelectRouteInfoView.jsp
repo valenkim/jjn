@@ -8,15 +8,13 @@
 </head>
 <body>
 <h1>확인할 루트를 선택하세요</h1>
-<form action="MaintainRoutemanager" method="get">
 루트선택:
 <%
 	String count =request.getAttribute("count").toString();
 	int n = Integer.parseInt(count);
 	
 %>
-</form>
-<form method = "post" action="MaintainRoutemanager">
+<form method = "post" action="SelectRouteManager">
 	<select name="routename" >
 	<% for(int i =0; i<n; i++){ %>
 			<option  value=<%= request.getAttribute("routename"+i) %>><%= request.getAttribute("routename"+i) %></option>
