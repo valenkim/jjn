@@ -16,7 +16,11 @@
 <form action="ViewOtherRouteManager">
 	<input type="submit" value="루트목록보기"><p>
 </form>
-
+<p>
+<table border="2" cellspacing="1"  width="500" cellpadding="5" > 
+<tr><td>☞ 별점 보기를 누르시면 전체 루트의 별점을 볼 수 있습니다.</td></tr>
+<tr><td>☞ 루트목록보기를 하시면 루트에 대한 상세 정보가 나옵니다.</td></tr>
+</table>
 
 </body>
 </html>

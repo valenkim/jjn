@@ -19,7 +19,6 @@
 <td>이름</td>
 <td>타입</td>
 <td>이벤트</td>
-<td>패스</td>
 <td>이메일</td>
 <td>전화번호</td>
 <td></td>
@@ -32,7 +31,6 @@
 	<td><%=request.getAttribute("title"+i) %></td>
 	<td><%=request.getAttribute("type"+i) %></td>
 	<td><%=request.getAttribute("event"+i) %></td>
-	<td><%=request.getAttribute("pass"+i) %></td>
 	<td><%=request.getAttribute("email"+i) %></td>
 	<td><%=request.getAttribute("tel"+i) %></td>
 	<td><a href='DeleteCompanyView.jsp?id=<%=request.getAttribute("id"+i)%>'>삭제</a></td>

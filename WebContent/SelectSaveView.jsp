@@ -8,8 +8,8 @@
 </head>
 <body>
 <form action= "SaveManager" method ="get">
-	<h1>여행 루트 이름을 입력하세요(영문)</h1>
-	<input type="text" name = "routename" value="hi">
+	<h1>여행 루트 이름을 입력하세요</h1>
+	<input type="text" name = "routename" >
 	<input type="submit" value ="저장하기">
 </form>
 

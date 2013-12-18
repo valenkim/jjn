@@ -38,7 +38,7 @@ public class ViewUserManager extends HttpServlet {
 		
 	   for(int i=0; i<t.size(); i++){
 		   request.setAttribute("userid"+i, t.get(i).userid);
-		   request.setAttribute("userpwd"+i, t.get(i).userpwd);
+		   //request.setAttribute("userpwd"+i, t.get(i).userpwd);
 		   request.setAttribute("name"+i, t.get(i).name);
 		   request.setAttribute("tel"+i, t.get(i).tel);
 		   request.setAttribute("add"+i, t.get(i).add);

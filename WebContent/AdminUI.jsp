@@ -11,7 +11,6 @@
 	<input type="submit" value="삭제할 루트 선택"><p>
 </form>
 
-
 <form action="ViewUserManager" method="Post">
 	<input type="submit" value="회사 정보보기"><p>
 </form>

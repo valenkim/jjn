@@ -76,6 +76,12 @@ public class CloseManager extends HttpServlet{
 			
 			if(startDate.equals(endDate)){
 				System.out.println("여행 루트 완성!!");
+				
+				ServletContext context = request.getSession().getServletContext();
+				RequestDispatcher rd  = context.getRequestDispatcher("/TimeTableManager");
+				
+				rd.forward(request, response);
+				
 			}
 			else{
 				Calendar startCal = Calendar.getInstance();
@@ -94,6 +100,7 @@ public class CloseManager extends HttpServlet{
 				    System.out.println("갱신하였습니다.");
 				}
 					 
+				
 				 
 			
 			}

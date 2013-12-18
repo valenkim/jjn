@@ -55,6 +55,9 @@ public class Login_company extends HttpServlet {
 					
 				} else {
 					System.out.println("실패했습니다.");
+					ServletContext context = request.getSession().getServletContext();
+					RequestDispatcher rd  = context.getRequestDispatcher("/MainUI.jsp");
+					
 				}
 				
 		}

@@ -21,6 +21,9 @@ public class SelectRouteManager extends HttpServlet {
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");
+		
 
 		ArrayList<RouteInfo> t;
 		
@@ -40,7 +43,9 @@ public class SelectRouteManager extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
-	        throws IOException, ServletException {    
+	        throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");
 		
 		String routename = request.getParameter("routename").toString();
 				

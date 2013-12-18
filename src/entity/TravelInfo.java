@@ -72,9 +72,9 @@ public class TravelInfo {
 			
 			String udsql = "";
 			if(city.equals("statCity"))
-				udsql="UPDATE Travel SET stat = '"+city_name+"', trainCount = 1 WHERE id = 1";
+				udsql="UPDATE Travel SET stat = '"+city_name+"', trainCount = 1 ORDER BY id DESC LIMIT 1";
 			else if(city.equals("destCity"))
-				udsql="UPDATE Travel SET dest = '"+city_name+"', trainCount = 1 WHERE id =1";
+				udsql="UPDATE Travel SET dest = '"+city_name+"', trainCount = 1 ORDER BY id DESC LIMIT 1";
 			
 			pstmt=conn.prepareStatement(udsql);
 			pstmt.executeUpdate(udsql);
@@ -433,7 +433,7 @@ public TravelInfo selectStatCity() {
 		
 		conn = con.setDB(conn);
 		
-		String sql = "SELECT stat, dest From Travel WHERE id = 1";
+		String sql = "SELECT stat, dest From Travel ORDER BY id DESC LIMIT 1";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery(sql);
 		

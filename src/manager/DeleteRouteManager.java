@@ -18,6 +18,9 @@ public class DeleteRouteManager extends HttpServlet {
 
 	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
+		request.setCharacterEncoding("utf-8");	
+		response.setCharacterEncoding("utf-8");
+		
 
 		String routename = request.getParameter("routename").toString();
 		System.out.println(routename);

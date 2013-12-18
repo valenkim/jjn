@@ -15,7 +15,6 @@
 <table border="1" cellspacing="0">
 <tr>
 <td>아이디</td>
-<td>비밀번호</td>
 <td>이름</td>
 <td>전화번호</td>
 <td>주소</td>
@@ -27,7 +26,6 @@
     <% for(int i =0; i<ni; i++){ %>
 	<tr>
 	<td><%=request.getAttribute("userid"+i) %></td>
-	<td><%=request.getAttribute("userpwd"+i) %></td>
 	<td><%=request.getAttribute("name"+i) %></td>
 	<td><%=request.getAttribute("tel"+i) %></td>
 	<td><%=request.getAttribute("add"+i) %></td>

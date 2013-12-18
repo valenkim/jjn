@@ -19,7 +19,7 @@ request.setCharacterEncoding("utf-8"); %>
 		    Password : <input type="password" name="pass"><br>
   이름 : <input type="text" name="name"><br>
  
-  주소 :  <input type="text" name="address" value = "서울시 중랑구 면목2동"> <br>
+  주소 :  <input type="text" name="address" > <br>
  
 email: <input type="text" name="email"><br>
 Tel: <input type="text" name="tel"><br>

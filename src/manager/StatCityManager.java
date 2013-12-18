@@ -28,6 +28,7 @@ public class StatCityManager extends HttpServlet {
 
 		try{
 
+			
 			ArrayList <Movement> m = new ArrayList<Movement>();
 	
 			m = move.selectCity("0");
@@ -71,6 +72,5 @@ public class StatCityManager extends HttpServlet {
 		
 	}
 		
-
 }
 

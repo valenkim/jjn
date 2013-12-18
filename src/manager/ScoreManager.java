@@ -70,10 +70,6 @@ public class ScoreManager extends HttpServlet {
 		    System.out.println("별점 기록이 완료되었습니다..");
 		}
 		
-		ServletContext context = request.getSession().getServletContext();
-		RequestDispatcher rd  = context.getRequestDispatcher("/AdminUI.jsp");
-		
-		rd.forward(request, response);
 		
 	}
 	

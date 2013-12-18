@@ -26,7 +26,7 @@ public class TimeTableManager extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest request,HttpServletResponse response)
+	public void doPost(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 		
 	
@@ -68,7 +68,7 @@ public class TimeTableManager extends HttpServlet {
 		rd.forward(request, response);
 	}
 	
-	public void doPost(HttpServletRequest request,HttpServletResponse response)
+	public void doGet(HttpServletRequest request,HttpServletResponse response)
 	        throws IOException, ServletException {    
 	}
 }
